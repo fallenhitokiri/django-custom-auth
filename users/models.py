@@ -13,8 +13,7 @@ class UserModel(AbstractBaseUser, PermissionsMixin):
     USERNAME_FIELD = 'email'
  
     def get_full_name(self):
-        full_name = '{0} {1}'.format(self.first_name, self.last_name)
-        return full_name.strip()
+        return self.email
  
     def get_short_name(self):
         return self.email
